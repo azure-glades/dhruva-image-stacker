@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <h1>Stacked FITS Image</h1>
+    <!-- <a href="/">Upload More Files</a> -->
+    <button type="link" class="return" href="/">Upload More Files</button>
+    <br>
+    <img src="{{ processed_image_path }}" alt="Processed Image">
+</body>
+</html>

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+*{
+    box-sizing: border-box;
+    --maincolor: #32567e;
+    --backcolor: #000000;
+    --textcolour: #cad6f2;
+    --linkcolor: #72a1de;
+}
+
+body {
+    font-family: "Audiowide", sans-serif;
+    background-color:var(--backcolor);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: var(--maincolor);
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: right;
+    color: white;
+}
+
+#wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#left {
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+}.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="file"] {
+    margin: 20px 0;
+}
+
+input[type="submit"] {
+    padding: 0.7rem 1rem;
+    height: 2.7rem;
+    display: block;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 50px;
+
+    font-weight: 500;
+    background-color: var(--maincolor);
+    color: white;
+
+    text-decoration: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color:var(--backcolor);
+}
+
+
+#right {
+    flex:1.5;
+}
+#bgimg {
+    display: flex;
+    flex-direction: row;
+    background-image: url('img/image.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}.credits {
+    position: fixed;
+    bottom: 1vw;
+    right: 1vh;
+    color: gray;
+    text-shadow: 0 0 2px black;
+}.credits_text{
+    font-size: 1rem;
+    margin-bottom: 10vh;
+    text-shadow: 0 0 2px black;
+}
+
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+
