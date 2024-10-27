@@ -12,6 +12,6 @@
     <!-- <a href="/">Upload More Files</a> -->
     <button type="link" class="return" href="/">Upload More Files</button>
     <br>
-    <img src="{{ processed_image_path }}" alt="Processed Image">
+    <img src="{{ url_for('static', filename=processed_image_path) }}" alt="Processed Image">
 </body>
 </html>

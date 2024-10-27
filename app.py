@@ -82,6 +82,6 @@ def upload_file():
         except OSError as e:
             print(f"Error deleting file {file_path}: {e}")
     
-    return render_template('result.html', processed_image_path=f'/{processed_image_path}')
+    return render_template('result.html', processed_image_path=processed_image_path.replace('static/', ''))
 
 
