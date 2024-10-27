@@ -53,8 +53,13 @@ def process_fits(image_list):
 # THE WEBPAGES
 @app.route('/')
 def index():
+    print("Rendering index.html from templates")
     return render_template('index.html')
 
+@app.route('/test')
+def test():
+    print("Test route")
+    return
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -82,6 +87,6 @@ def upload_file():
         except OSError as e:
             print(f"Error deleting file {file_path}: {e}")
     
-    return render_template('result.html', processed_image_path=processed_image_path.replace('static/', ''))
+    return render_template('result.html', processed_image_path=f'/{processed_image_path}')
 
 

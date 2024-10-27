@@ -1,4 +1,4 @@
-#!/home/azureglades/Documents/pyprog/image_stacker/.venv/bin/python3
+#!/home/azureglades/Coding/pycode/image_stacker/.venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
