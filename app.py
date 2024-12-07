@@ -1,6 +1,7 @@
 import os
 import numpy as np
 from astropy.io import fits
+
 from scipy.ndimage import gaussian_filter
 import cv2 as cv
 from flask import Flask, request, render_template, send_file
@@ -21,7 +22,7 @@ if __name__ == '__main__':
         os.makedirs(UPLOAD_FOLDER)
     if not os.path.exists(PROCESSED_FOLDER):
         os.makedirs(PROCESSED_FOLDER)
-    app.run(debug=True)
+    app.run(debug=True, host='127.0.0.1', port=5000)
 
 
 # FUNCTIONS
@@ -36,7 +37,7 @@ def process_fits(image_list):
     norm_images = [img[2000:8000, 2000:8000] / np.percentile(img[2000:8000, 2000:8000], 99) for img in images]
 
     R = norm_images[5] * 0.7 + norm_images[6] * 0.3
-    G = norm_images[3] * 0.7 + norm_images[4] * 0.3 
+    G = norm_images[3] * 0.7 + norm_images[4] * 0.3
     B = norm_images[2] * 0.5 + norm_images[1] * 0.25 + norm_images[0] * 0.25
 
     rgb_image = np.stack([B, G, R], axis=-1)
@@ -88,5 +89,3 @@ def upload_file():
             print(f"Error deleting file {file_path}: {e}")
     
     return render_template('result.html', processed_image_path=f'/{processed_image_path}')
-
-
