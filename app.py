@@ -35,11 +35,15 @@ def process_fits(image_list):
     for i, img in enumerate(images):
         print(f"Image {i} shape: {img.shape}")
     norm_images = [img[2000:8000, 2000:8000] / np.percentile(img[2000:8000, 2000:8000], 99) for img in images]
-
+'''
     R = norm_images[5] * 0.7 + norm_images[6] * 0.3
     G = norm_images[3] * 0.7 + norm_images[4] * 0.3
     B = norm_images[2] * 0.5 + norm_images[1] * 0.25 + norm_images[0] * 0.25
-
+'''
+    R = sum(norm_images[i] * (0.7 if i % 2 == 0 else 0.3) for i in range(len(norm_images))) / len(norm_images)
+    G = sum(norm_images[i] * (0.6 if i % 3 == 0 else 0.4) for i in range(len(norm_images))) / len(norm_images)
+    B = sum(norm_images[i] * (0.5 if i % 4 == 0 else 0.25) for i in range(len(norm_images))) / len(norm_images)
+    
     rgb_image = np.stack([B, G, R], axis=-1)
     rgb_image = gaussian_filter(rgb_image, sigma=1)
     rgb_image = np.clip(rgb_image, 0, 1)
