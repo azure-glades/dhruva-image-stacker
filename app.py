@@ -22,6 +22,7 @@ if __name__ == '__main__':
         os.makedirs(UPLOAD_FOLDER)
     if not os.path.exists(PROCESSED_FOLDER):
         os.makedirs(PROCESSED_FOLDER)
+    app.run()
 
 
 # FUNCTIONS
